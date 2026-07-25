@@ -1,19 +1,30 @@
-# Python
+# =============================================================================
+#  career-ai-agent — .gitignore
+#  Safe to publish on GitHub — no secrets, no generated artefacts.
+# =============================================================================
+
+# ─── Secrets — NEVER commit ──────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+# Allow the template file
+!.env.example
+
+# ─── Python bytecode ─────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 
-# Virtual environments
-.env
-.venv
-env/
+# ─── Virtual environments ────────────────────────────────────────────────────
+.venv/
 venv/
+env/
 ENV/
 env.bak/
 venv.bak/
 
-# Distribution / packaging
+# ─── Distribution / packaging ────────────────────────────────────────────────
 .Python
 build/
 develop-eggs/
@@ -34,15 +45,15 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# PyInstaller
+# ─── PyInstaller ─────────────────────────────────────────────────────────────
 *.manifest
 *.spec
 
-# Installer logs
+# ─── Installer logs ──────────────────────────────────────────────────────────
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# ─── Testing & coverage ──────────────────────────────────────────────────────
 htmlcov/
 .tox/
 .nox/
@@ -56,46 +67,65 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# mypy
+# ─── Type checkers ───────────────────────────────────────────────────────────
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-# Pyre type checker
 .pyre/
 
-# Environments
-.env
-.env.*
-!.env.example
-
-# IDEs
+# ─── IDEs ────────────────────────────────────────────────────────────────────
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
+# ─── OS artefacts ────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 
-# Jupyter
-.ipynb_checkpoints
-*.ipynb
+# ─── Jupyter ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+# Notebooks themselves are committed — only checkpoints are ignored
 
-# Logs
+# ─── Logs ────────────────────────────────────────────────────────────────────
 *.log
 logs/
 
-# Vector store / database files
+# ─── Runtime storage (generated at runtime — never commit) ───────────────────
+storage/vector_db/
+storage/cache/
+
+# ─── Vector store / database files ───────────────────────────────────────────
 *.db
 *.sqlite
 *.sqlite3
 chroma/
 faiss_index/
 
-# Data files (large)
-data/*.csv
-data/*.json
-data/*.pdf
-data/*.txt
+# ─── Large data files ────────────────────────────────────────────────────────
+# PDFs are checked-in intentionally for this project.
+# Add the lines below if you want to exclude them in a fork without large files:
+# data/*.pdf
+# data/*.csv
+# data/*.json
+# data/*.txt
+
+# Notebook artifacts
+storage/
+append_*.py
+*_nb*.py
+*_export.txt
+fix_*.py
+build_*.py
+patch_*.py
+measure_*.py
+tighten_*.py
+update_*.py
+verify_*.py
+remove_*.py
+apply_*.py
+probe_*.py
+inspect_*.py
+test_*.py
+convert_*.py
+final_*.py
