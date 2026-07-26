@@ -1,5 +1,7 @@
-"""
-This module will provide a factory/wrapper for instantiating the LangChain
-Embeddings model (e.g., OpenAIEmbeddings, HuggingFaceEmbeddings) from
-application settings, isolating embedding provider details from the RAG pipeline.
-"""
+from langchain_huggingface import HuggingFaceEmbeddings
+
+def get_embeddings():
+    """
+    Returns the configured embedding model for the project.
+    """
+    return HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")

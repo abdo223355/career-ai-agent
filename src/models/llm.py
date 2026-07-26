@@ -1,5 +1,11 @@
-"""
-This module will provide a factory/wrapper for instantiating the LangChain
-ChatModel (e.g., ChatOpenAI, ChatAnthropic) from application settings,
-keeping all provider-specific configuration in one place.
-"""
+import os
+from langchain_openai import ChatOpenAI
+
+def get_llm():
+    """
+    Returns the configured primary ChatModel for the agent.
+    """
+    return ChatOpenAI(
+        model="gpt-5-mini",
+        api_key=os.environ.get("OPENAI_API_KEY", "dummy")
+    )
