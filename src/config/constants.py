@@ -64,3 +64,23 @@ MAX_TOKENS: int = 2_048          # maximum tokens in a single LLM response
 # Only files with these suffixes will be loaded from data/.
 # ---------------------------------------------------------------------------
 SUPPORTED_EXTENSIONS: frozenset[str] = frozenset({".pdf", ".txt", ".md", ".docx"})
+
+# ---------------------------------------------------------------------------
+# Experience Level Configuration
+# Single source of truth for all experience levels used throughout the app.
+# Consumed by: UI sidebar selector, LangGraph state, node prompts, cache keys.
+# ---------------------------------------------------------------------------
+EXPERIENCE_LEVELS: list[str] = [
+    "Internship",
+    "Junior",
+    "Mid Level",
+    "Senior",
+]
+
+DEFAULT_EXPERIENCE_LEVEL: str = "Senior"
+
+# ---------------------------------------------------------------------------
+# Response Cache
+# ---------------------------------------------------------------------------
+CACHE_DB_PATH: str = "storage/response_cache.db"
+CACHE_SIMILARITY_THRESHOLD: float = 1.0  # 1.0 = exact match only (hash-based)

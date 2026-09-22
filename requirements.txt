@@ -1,1 +1,32 @@
-# empty
+# Production Dependencies for Career AI Agent
+python-dotenv>=1.0.0
+streamlit>=1.31.0
+fastapi>=0.109.0
+uvicorn>=0.27.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langchain-huggingface>=0.1.0
+langchain-classic>=0.1.0
+langgraph>=0.2.0
+# ── Checkpointing ─────────────────────────────────────────────────────────────
+# langgraph-checkpoint-sqlite provides SqliteSaver for persistent conversation
+# memory. It is a SEPARATE package from langgraph-checkpoint (base interfaces)
+# and must be listed explicitly or Docker builds will not include it.
+langgraph-checkpoint-sqlite>=2.0.0
+pydantic>=2.6.0
+chromadb>=0.4.22
+sentence-transformers>=2.2.2
+rank_bm25>=0.2.2
+requests>=2.31.0
+typing-extensions>=4.9.0
+mcp>=1.0.0
+pypdf>=3.0.0
+python-docx>=1.0.0
+# ── Response Cache ORM ────────────────────────────────────────────────────────
+# SQLAlchemy is used by src/cache/ for the SQLite response-cache database.
+# Also a separate package not pulled in transitively.
+sqlalchemy>=2.0.0
+langchain-mcp-adapters>=0.3.0
+fastmcp>=0.1.0
