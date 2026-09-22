@@ -7,10 +7,10 @@ import datetime
 from typing import Dict, Any, List, Optional
 
 import streamlit as st
-from src.config.constants import EXPERIENCE_LEVELS, DEFAULT_EXPERIENCE_LEVEL
-
 # Add project root directory to python path for backend imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
+from src.config.constants import EXPERIENCE_LEVELS, DEFAULT_EXPERIENCE_LEVEL
 
 # ── Checkpointer import — two-tier with graceful fallback ────────────────────
 # langgraph-checkpoint-sqlite is a SEPARATE package from langgraph-checkpoint.
