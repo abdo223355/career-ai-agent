@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git/
+.gitignore
+.env.local
+.venv/
+venv/
+ENV/
+.ipynb_checkpoints/
+*.db-journal
+*.log
+.DS_Store
+test.ipynb
+final_notebook_export.txt
+final_notebook_export_no_langsmith.txt
