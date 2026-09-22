@@ -658,7 +658,7 @@ st.markdown(f"""
 # Environment & Backend Validation Check
 if not BACKEND_AVAILABLE:
     st.error(f"⚠️ Backend Infrastructure Error: {BACKEND_ERROR}")
-    st.info("Please verify that all project dependencies and `.env` OPENROUTER_API_KEY credentials are configured.")
+    st.info(f"Backend Error: {BACKEND_ERROR}")
     st.stop()
 
 # ── Persistent CV Banner (shown above chat when CV is loaded) ─────────────────
